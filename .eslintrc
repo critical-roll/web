@@ -1,0 +1,27 @@
+{
+  "extends": ["@pepeeja/eslint-config/react", "next/core-web-vitals"],
+  "ignorePatterns": ["scripts"],
+  "rules": {
+    "import/no-unresolved": 0,
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "target": "./src/common",
+            "from": "./src/features"
+          },
+          {
+            "target": "./src/common",
+            "from": "./src/pages"
+          },
+          {
+            "target": "./src/features",
+            "from": "./src/pages"
+          }
+        ]
+      }
+    ],
+    "react/prop-types": [0]
+  }
+}
